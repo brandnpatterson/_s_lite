@@ -184,6 +184,13 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
 add_action('wp_enqueue_scripts', 'page_scripts');
 
 /**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
+
+/**
  * Search only for posts
  */
 function search_only_for_posts($query) {
